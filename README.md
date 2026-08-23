@@ -48,6 +48,17 @@ Here is the implementation rewritten against the full requirements…
 
 The apology is just the opening — **writing the mistake into permanent memory** is the real point. Every time it annoys you, it learns.
 
+## When to use it
+
+Ever get genuinely annoyed by a dumb AI? …
+
+- You've stated a requirement three times; it still misses item #2
+- The same bug gets fixed, then resurfaces — like it has amnesia
+- You asked for a one-line change; it wrote you an essay and changed nothing
+- You said "don't touch this"; it touched exactly this
+
+When you're about to throw the keyboard, the last thing you need is another hollow "sorry, I'll do better." You need it to kneel, own the mistake, and actually remember. That's exactly what spare-me does.
+
 ## Features
 
 - **Funny but not hollow** — the apology appears exactly once, then it gets back to work.
