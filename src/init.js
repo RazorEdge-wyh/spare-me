@@ -101,7 +101,7 @@ async function runInit(opts) {
     return;
   }
 
-  render.title('🤲 spare-me · installing the "Spare Me" skill');
+  render.title('spare-me · installing the "Spare Me" skill');
 
   // 1. Install skills
   const result = installSkills(targetDir);
