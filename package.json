@@ -13,7 +13,7 @@
     "spare-me"
   ],
   "license": "MIT",
-  "author": "王越豪（湖南科技大学 26 届）",
+  "author": "王越豪 | 湖南科技大学 | 26届",
   "type": "commonjs",
   "bin": {
     "spare-me": "./bin/spare-me.js"
