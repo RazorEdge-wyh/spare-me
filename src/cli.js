@@ -18,7 +18,7 @@ const { runDoctor, printReport } = require('./doctor');
 const { line } = require('./phrases');
 const pkg = require('../package.json');
 
-const HELP = `🤲 spare-me v${pkg.version} — make Claude drop to its knees and learn from its mistakes
+const HELP = `spare-me v${pkg.version} — make Claude drop to its knees and learn from its mistakes
 
 Usage:
   spare-me init [--yes] [--dir <path>]   Install the skill, memory template, and CLAUDE.md behavior rule
@@ -68,7 +68,7 @@ function printTry() {
 
 /** Print the skill list */
 function printList() {
-  render.title('🤲 spare-me · Available skills');
+  render.title('spare-me · Available skills');
   for (const s of SKILL_META) {
     console.log(`${s.icon} ${render.bold(s.name)}`);
     console.log(render.gray(`   ${s.desc}`));
