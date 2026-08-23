@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤲 spare-me
+# spare-me
 
 ### A Claude Code skill that makes your AI drop to its knees in apology — and actually learn from the mistake
 
@@ -102,8 +102,8 @@ spare-me doctor   Health-check the memory; flag repeated offenses
 ```text
 $ spare-me doctor
 
-🤲 spare-me · Mistake Memory Check
-Score: 85/100  🟡 Good  Minor gaps, easy to fix
+spare-me · Mistake Memory Check
+Score: 85/100  Good  Minor gaps, easy to fix
 ────────────────────────────────────────────
   ✔ Has mistake-memory file
   ✔ Has records (currently 6)
