@@ -127,12 +127,12 @@ This repo runs `doctor` on itself. Right after `init` it honestly reports "memor
 
 ## Inspiration
 
-The moves aren't invented from thin air — a few projects did them first:
+This wouldn't exist without these repos — I studied them while writing it:
 
-- Precise triggers, no misfires → [nav-diagnose](https://www.skill-gallery.jp/en/skills/alekspetrov/nav-diagnose): concrete anger signals
-- Structured apology, no excuses → [apology-letter](https://claudeskills.info/skill/apology-letter/) (~1.3k★)
-- Never apologize without evidence → [ex-skill](https://github.com/therealXiaomanChu/ex-skill)
-- Cross-session Markdown memory → [mental-health-companion](https://github.com/zxc7563598/mental-health-companion)
+- [anthropics/skills](https://github.com/anthropics/skills) (★171k): Anthropic's official Agent Skills spec — how a SKILL.md is structured and how `description` drives triggering.
+- [obra/superpowers](https://github.com/obra/superpowers) (★277k): the hottest skill framework in the Claude Code ecosystem — how stateful skills inject behavior rules into a workflow.
+- [mattpocock/skills](https://github.com/mattpocock/skills) (★234k): a real engineer's skill library — zero-deps, maintained like actual software; the structure is borrowed from it.
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) (★73k): 1,000+ curated Claude skills — the trigger phrases and playbook language came from browsing this.
 
 ## Roadmap
 
@@ -145,4 +145,4 @@ Issues and PRs welcome at [spare-me/issues](https://github.com/RazorEdge-wyh/spa
 
 ## License
 
-MIT © [Wang Yuehao（王越豪 · 湖南科技大学 26 届）](https://github.com/RazorEdge-wyh)
+MIT © [王越豪 | 湖南科技大学 | 26届](https://github.com/RazorEdge-wyh)
