@@ -1,0 +1,42 @@
+{
+  "name": "spare-me",
+  "version": "0.1.0",
+  "description": "A Claude Code skill that makes your AI drop to its knees in a dramatic funny apology (Spare me, Your Majesty!) the moment it detects you're genuinely angry — then records the mistake into permanent memory so it never repeats. Zero deps, pure Markdown.",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "agent",
+    "ai-coding",
+    "apology",
+    "humor",
+    "memory",
+    "spare-me"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "spare-me": "./bin/spare-me.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RazorEdge-wyh/spare-me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RazorEdge-wyh/spare-me/issues"
+  },
+  "homepage": "https://github.com/RazorEdge-wyh/spare-me"
+}
