@@ -2,9 +2,9 @@
 
 # 🤲 spare-me
 
-### Make your AI drop to its knees — and actually learn from the mistake
+### A Claude Code skill that makes your AI drop to its knees in apology — and actually learn from the mistake
 
-**The angrier you get, the faster it kneels. Then it owns the mistake, logs it, and never makes it again.**
+**Detects genuine anger → dramatic funny apology (tagged with the skill) → root-cause recap → writes the mistake into permanent memory so it never repeats.**
 
 <br/>
 
@@ -13,7 +13,7 @@
 ![Node](https://img.shields.io/badge/node-%3E%3D16-green)
 ![Zero deps](https://img.shields.io/badge/deps-0-blueviolet)
 
-Zero deps, pure Markdown, easy to tweak once installed.
+Zero deps, pure Markdown, one-line install.
 
 ```bash
 npm i -g github:RazorEdge-wyh/spare-me && spare-me init
@@ -25,7 +25,13 @@ npm i -g github:RazorEdge-wyh/spare-me && spare-me init
 
 ---
 
-## What it does
+## What it is
+
+A Claude Code skill. When the AI detects that you're genuinely angry, it stops mumbling "Sorry, I'll do better next time" and does three things:
+
+1. **Kneels** — one medieval-court apology ("Spare me, Your Majesty!"), tagged with the skill name so you know it's the one owning up.
+2. **Owns the mistake** — looks back at the last turn and says what actually went wrong: missed a requirement, wrote a bug, or answered the wrong question.
+3. **Logs it** — appends the mistake to `.claude/memory/spare-me.md`, with an emphasis on "how to avoid" next time.
 
 ```text
 You: You got it wrong AGAIN??? I've told you three times! Do you even read my requirements?!
@@ -40,32 +46,21 @@ Claude:
 Here is the implementation rewritten against the full requirements…
 ```
 
-Without spare-me, an annoyed AI just mumbles "Sorry, I'll do better next time" — and repeats the mistake.
+The apology is just the opening — **writing the mistake into permanent memory** is the real point. Every time it annoys you, it learns.
 
-With spare-me, it goes: **kneel → own it → log it → never repeat it.**
+## Features
 
-Don't read this as a gag — the last step is the real product. Every time it annoys you, it gets smarter.
+- **Funny but not hollow** — the apology appears exactly once, then it gets back to work.
+- **It actually remembers** — mistakes live in `.claude/memory/spare-me.md`, read at the start of every new session.
+- **Repeated offenses escalate** — the second time the same mistake appears, the AI admits it and sets a stricter rule for itself.
+- **No unsolicited apologies** — without clear anger signals it never triggers. An apology out of nowhere is more annoying than the mistake.
+- **`doctor` health check** — one command grades how well the AI is learning and flags repeated offenses.
+- **Zero deps** — Node standard library only; the SKILL.md is plain Markdown you can edit freely.
 
----
-
-## The three steps, every time
-
-1. **Kneel.** One medieval-court apology, always tagged `(skill: spare-me)`.
-2. **Own it.** Look back at the last turn and say what actually went wrong — missed a requirement? buggy code? wrong output? Facts, no excuses.
-3. **Log it.** Append the mistake to `.claude/memory/spare-me.md`, with the emphasis on "how to avoid" next time.
-
-A second offense isn't met with another kneel-and-play-cute — the AI admits "this is the second time", and sets a stricter rule for itself.
-
-No visible anger, no apology. An unsolicited apology is more annoying than the mistake.
-
----
-
-## Install
+## Quick start
 
 ```bash
 npm i -g github:RazorEdge-wyh/spare-me
-# or after publishing to npm: npm i -g spare-me
-
 spare-me init
 ```
 
@@ -81,8 +76,6 @@ your-project/
 
 Then go make Claude angry once.
 
----
-
 ## Commands
 
 ```text
@@ -90,8 +83,6 @@ spare-me init     Install skill + memory template + behavior rule
 spare-me try      Print a random apology — preview the tone
 spare-me doctor   Health-check the memory; flag repeated offenses
 ```
-
----
 
 ## `doctor`: is it actually learning?
 
@@ -117,26 +108,20 @@ Local-only heuristics — no network, no mutation, just a report. Use it to chec
 
 This repo runs `doctor` on itself. Right after `init` it honestly reports "memory file is empty — never triggered", and the score climbs as you make it learn.
 
----
+## How it works
 
-## Why "never repeat it" isn't just talk
-
-1. Claude Code natively loads **Skills**: the `SKILL.md` under `.claude/skills/` auto-matches by `description`, so it wakes up the moment you flare up.
-2. spare-me is a **stateful skill** — it needs to keep sensing anger — so `init` also injects a behavior rule into `CLAUDE.md`: check before every reply whether the user is clearly angry; if so, activate (three layers: `description` + `CLAUDE.md` rule + `AGENTS.md`).
-3. On trigger it runs the three steps and appends the mistake to memory. **New sessions start by skimming the memory file** and avoiding those mistakes.
-
----
+1. Claude Code natively loads Skills: the `SKILL.md` under `.claude/skills/` auto-matches by `description`, so it wakes up the moment you flare up.
+2. spare-me is a stateful skill — it needs to keep sensing anger — so `init` also injects a behavior rule into `CLAUDE.md`: check before every reply whether the user is clearly angry; if so, activate (three layers: `description` + `CLAUDE.md` rule + `AGENTS.md`).
+3. On trigger it runs the three steps and appends the mistake to memory. New sessions start by skimming the memory file and avoiding those mistakes.
 
 ## Inspiration
 
 The moves aren't invented from thin air — a few projects did them first:
 
-- Precise triggers, no misfires → [nav-diagnose](https://www.skill-gallery.jp/en/skills/alekspetrov/nav-diagnose): concrete anger signals, "no trigger on a single correction"
+- Precise triggers, no misfires → [nav-diagnose](https://www.skill-gallery.jp/en/skills/alekspetrov/nav-diagnose): concrete anger signals
 - Structured apology, no excuses → [apology-letter](https://claudeskills.info/skill/apology-letter/) (~1.3k★)
 - Never apologize without evidence → [ex-skill](https://github.com/therealXiaomanChu/ex-skill)
 - Cross-session Markdown memory → [mental-health-companion](https://github.com/zxc7563598/mental-health-companion)
-
----
 
 ## Roadmap
 
@@ -147,8 +132,6 @@ The moves aren't invented from thin air — a few projects did them first:
 
 Issues and PRs welcome at [spare-me/issues](https://github.com/RazorEdge-wyh/spare-me/issues).
 
----
-
 ## License
 
-MIT © [Wang Yuehao](https://github.com/RazorEdge-wyh)
+MIT © [Wang Yuehao（王越豪 · 湖南科技大学 26 届）](https://github.com/RazorEdge-wyh)
