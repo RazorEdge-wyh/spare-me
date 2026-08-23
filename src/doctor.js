@@ -14,10 +14,10 @@ const path = require('node:path');
 const { memoryPath, analyze } = require('./memory');
 
 const LEVELS = [
-  { min: 90, key: 'excellent', label: '🟢 Excellent', note: 'AI remembers and improves fast' },
-  { min: 70, key: 'good', label: '🟡 Good', note: 'Minor gaps, easy to fix' },
-  { min: 50, key: 'fair', label: '🟠 Fair', note: 'Little memory has accumulated' },
-  { min: 0, key: 'danger', label: '🔴 Danger', note: 'Not learning yet' },
+  { min: 90, key: 'excellent', label: 'Excellent', note: 'AI remembers and improves fast' },
+  { min: 70, key: 'good', label: 'Good', note: 'Minor gaps, easy to fix' },
+  { min: 50, key: 'fair', label: 'Fair', note: 'Little memory has accumulated' },
+  { min: 0, key: 'danger', label: 'Danger', note: 'Not learning yet' },
 ];
 
 function levelOf(score) {
@@ -83,7 +83,7 @@ function runDoctor(targetDir) {
 /** Print the report (pure display, no side effects) */
 function printReport(report) {
   const render = require('./render');
-  console.log(render.title('🤲 spare-me · Mistake Memory Check'));
+  console.log(render.title('spare-me · Mistake Memory Check'));
   console.log(`${render.bold(`Score: ${report.total}/100`)}  ${render.bold(report.levelLabel)}  ${render.gray(report.levelNote)}`);
   console.log(render.line());
 
