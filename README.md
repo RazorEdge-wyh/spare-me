@@ -145,4 +145,4 @@ Issues and PRs welcome at [spare-me/issues](https://github.com/RazorEdge-wyh/spa
 
 ## License
 
-MIT © [王越豪 | 湖南科技大学 | 26届](https://github.com/RazorEdge-wyh)
+MIT © [王越豪 | 湖南科技大学 | 26级](https://github.com/RazorEdge-wyh)
